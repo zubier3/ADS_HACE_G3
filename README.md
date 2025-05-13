@@ -22,11 +22,7 @@ Datasets are private and owned by HACE. Therefore acess to these must be request
 
 ## Requirements
 
-Install the required Python packages using:
-
-```bash
-pip install -r requirements.txt
-```
+This project uses a Conda environment to manage dependencies. The required packages are specified in the environment.yml file.
 
 Main libraries used:
 - `pandas`
@@ -37,10 +33,48 @@ Main libraries used:
 - `xgboost`
 - `tqdm`
 
----
+## Environment Setup
+
+1.  Ensure [Conda](https://docs.conda.io/en/latest/) is installed (e.g., via Miniconda or Anaconda).
+2.  Clone this repository:
+
+    ```bash
+    git clone [https://github.com/zubier3/ADS_HACE_G3.git](https://github.com/zubier3/ADS_HACE_G3.git)
+    cd ADS_HACE_G3
+    ```
+3.  Create the Conda environment from the `environment.yml` file:
+
+    ```bash
+    conda env create -f environment.yml
+    ```
+4.  Activate the environment:
+
+    ```bash
+    conda activate ads_hace_g3
+    ```
+5.  Install required NLTK data:
+
+    ```python
+    import nltk
+    nltk.download('punkt')
+    nltk.download('punkt_tab')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    ```
+6.  Install the SpaCy language model (e.g., English small model):
+
+    ```bash
+    python -m spacy download en_core_web_sm
+    ```
 
 ## Running the Project
 
-Open each notebook in the recommended order (from `01_02_Preprocessing_EDA.ipynb` to `04_Company_Scoring(iii).ipynb`) using JupyterLab or VS Code.
+Open JupyterLab or VS Code with the `ads_hace_g3` environment activated. Run the notebooks in the following order:
 
----
+1.  `01_02_Preprocessing_EDA.ipynb`
+2.  `03_Context_Classifier.ipynb`
+3.  `04_Company_Scoring(i).ipynb`
+4.  `04_Company_Scoring(ii).ipynb`
+5.  `04_Company_Scoring(iii).ipynb`
+
+Ensure access to the HACE datasets before running the notebooks, as they are required for data processing.
