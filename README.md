@@ -16,6 +16,10 @@ This repository contains the code and notebooks developed for the Applied Data S
 
 ---
 
+## Datasets
+
+Datasets are private and owned by HACE. Therefore acess to these must be requested
+
 ## Requirements
 
 Install the required Python packages using:
